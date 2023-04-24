@@ -1,0 +1,56 @@
+{% extends "index.html" %} {% block title %} Dashboard {% endblock %}
+
+{% block content %}
+<section class="onboarding-section">
+
+<form method="POST" name="resultform" id="resultform" action="{{ url_for('routes.result')}}" method="POST">
+    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="end end">
+        <div class="col-md-8 p-0">
+            <span style="font-size: 28px;"><b>YouTube Sentinent Analysis Dashboard</b></span>
+            <button type="submit" class="mt-2 float-right btn btn-primary">Display</button>
+        </div>
+
+      </div>
+    
+    <div>
+        <div class="row mb-2 mt-3">
+            <div class="mt-2 col-md-4 border-right">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                          <label data-toggle="tooltip" data-placement="top" title="Masonry veneer area category">Places</label>
+                          <select class="form-control" name="place" id="place">
+                            <option value="NEWYORK" selected>NEWYORK</option>
+                            <option value="TEXAS">TEXAS</option>
+                            <option value="CHICAGO">CHICAGO</option>
+                          </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label data-toggle="tooltip" data-placement="top" title="Enter food name" for="">Category</label>
+                            <input type="text" class="form-control" name="category" id="category" placeholder="Enter food name" value="{{Rice}}"/>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-8">
+                <div class="text-center">
+                    <img
+                      alt="Dashboard"
+                      class="mb-5"
+                      height="100%"
+                      src="{{url_for('static', filename='/results/chicago/food_word_cloud.PNG')}}"
+                      width="100%"
+                    />
+                  </div>
+            </div>
+        </div>
+    </div>
+</form>
+</section>
+{% endblock %}
