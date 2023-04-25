@@ -3,7 +3,7 @@
 {% block content %}
 <section class="onboarding-section">
 
-<form method="POST" name="resultform" id="resultform" action="{{ url_for('routes.result')}}" method="POST">
+<form method="POST" name="resultform" id="resultform" action="{{ url_for('routes.getImageResult')}}" method="POST">
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="end end">
         <div class="col-md-8 p-0">
             <span style="font-size: 28px;"><b>YouTube Sentinent Analysis Dashboard</b></span>
@@ -20,7 +20,8 @@
                         <div class="form-group">
                           <label data-toggle="tooltip" data-placement="top" title="Masonry veneer area category">Places</label>
                           <select class="form-control" name="place" id="place">
-                            <option value="NEWYORK" selected>NEWYORK</option>
+                            <option value="" selected>- Select Place -</option>
+                            <option value="NEWYORK">NEWYORK</option>
                             <option value="TEXAS">TEXAS</option>
                             <option value="CHICAGO">CHICAGO</option>
                           </select>
@@ -39,15 +40,92 @@
             </div>
 
             <div class="col-md-8">
-                <div class="text-center">
-                    <img
-                      alt="Dashboard"
-                      class="mb-5"
-                      height="100%"
-                      src="{{url_for('static', filename='/results/chicago/food_word_cloud.PNG')}}"
-                      width="100%"
-                    />
-                  </div>
+                {% if (result) %}
+                    {% if result == 'NEWYORK' %}
+                    <span class="pl-2">Showing result for: <b>Newyork</b></span>
+                    <div class="text-center">
+                        <img
+                        alt="Dashboard"
+                        class="mb-5"
+                        height="100%"
+                        src="{{url_for('static', filename='/results/newyork/places_word_cloud.PNG')}}"
+                        width="100%"
+                        />
+                    </div>
+                    {% elif result == 'CHICAGO' %}
+                    <span class="pl-2">Showing result for: <b>Chicago</b></span>
+                    <div class="text-center">
+                        <img
+                        alt="Dashboard"
+                        class="mb-5"
+                        height="100%"
+                        src="{{url_for('static', filename='/results/chicago/places_word_cloud.PNG')}}"
+                        width="100%"
+                        />
+                    </div>
+                    {% elif result == 'TEXAS' %}
+                    <span class="pl-2">Showing result for: <b>Texas</b></span>
+                    <div class="text-center">
+                        <img
+                        alt="Dashboard"
+                        class="mb-5"
+                        height="100%"
+                        src="{{url_for('static', filename='/results/texas/places_word_cloud.PNG')}}"
+                        width="100%"
+                        />
+                    </div>
+
+                    <!-- category -->
+                    {% elif result == 'newyork' %}
+                    <span class="pl-2">Showing food result for: <b>Newyork</b></span>
+                    <div class="text-center">
+                        <img
+                        alt="Dashboard"
+                        class="mb-5"
+                        height="100%"
+                        src="{{url_for('static', filename='/results/newyork/food_word_cloud.PNG')}}"
+                        width="100%"
+                        />
+                    </div>
+                    {% elif result == 'chicago' %}
+                    <span class="pl-2">Showing food result for: <b>Chicago</b></span>
+                    <div class="text-center">
+                        <img
+                        alt="Dashboard"
+                        class="mb-5"
+                        height="100%"
+                        src="{{url_for('static', filename='/results/chicago/food_word_cloud.PNG')}}"
+                        width="100%"
+                        />
+                    </div>
+                    {% elif result == 'texas' %}
+                    <span class="pl-2">Showing food result for: <b>Texas</b></span>
+                    <div class="text-center">
+                        <img
+                        alt="Dashboard"
+                        class="mb-5"
+                        height="100%"
+                        src="{{url_for('static', filename='/results/texas/food_word_cloud.PNG')}}"
+                        width="100%"
+                        />
+                    </div>
+
+                    {% else %}
+                    <div class="text-center">
+                        <img
+                        alt="Dashboard"
+                        class="mb-5 pl-0"
+                        height="60%"
+                        src="{{url_for('static', filename='/results/no_result2.png')}}"
+                        width="60%"
+                        />
+                    </div>
+                    <div class="text-center">
+                        <span><b>No Result! Select an item!</b></span>
+                    </div>
+
+                    {% endif %}
+                {% endif %} 
             </div>
         </div>
     </div>

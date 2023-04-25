@@ -10,7 +10,3 @@ plotly
 nltk
 wordcloud
 matplotlib
-spacy
-openai
-transformers
-torch

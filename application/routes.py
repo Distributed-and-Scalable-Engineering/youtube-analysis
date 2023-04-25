@@ -14,26 +14,33 @@ def dahboard():
 @routes.route('/result', methods=['GET', 'POST'])
 def getImageResult():
 
+    place = None
+    category = None
     place = request.form.get('place')
     category = request.form.get('category')
 
-    print(f'request got in here for place ...', place)
-    print(f'request got in here for category ...', category)
 
-    res = ''
+    res = None
 
     if(place != None):
+        print(f'request got in here for place ...', place)
         if(place == 'NEWYORK'):
             res = 'NEWYORK'
         elif(place == 'CHICAGO'):
             res = 'CHICAGO'
-        else:
+        elif(place == 'TEXAS'):
             res = 'TEXAS'
-    elif(category != None):
-        if(category == 'food'):
-            res = 'food'
+    
+    if(category != None):
+        print(f'request got in here for category ...', category)
+        if(category.lower() == 'Newyork'.lower()):
+            res = 'newyork'
+        elif(category.lower() == 'Texas'.lower()):
+            res = 'texas'
         else:
-            res = ''
+            res = 'chicago'
 
-
+    if(res == None):
+        res = 'NORESULT'
+    print(f'request for res result ...', res)
     return render_template('dashboard.html', result=res)
