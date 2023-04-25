@@ -37,7 +37,7 @@ def getImageResult():
             res = 'newyork'
         elif(category.lower() == 'Texas'.lower()):
             res = 'texas'
-        else:
+        elif(category.lower() == 'Chicago'.lower()):
             res = 'chicago'
 
     if(res == None):

@@ -69,12 +69,20 @@
         </nav>
         <div class="container mt-4">
             {% block content %} 
-            <h2>
-                Welcome To YouTube Video Sentiment Analysis
-            </h2>
 
-            <div class="">
-                
+            <div class="text-center">
+                <h2>
+                    Welcome To YouTube Video Sentiment Analysis
+                </h2>
+                <div class="text-center">
+                    <img
+                    alt="Dashboard"
+                    class="mb-5"
+                    height="100%"
+                    src="{{url_for('static', filename='/img/sentiment3.png')}}"
+                    width="100%"
+                    />
+                </div>
             </div>
             {% endblock %}
         </div>
