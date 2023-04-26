@@ -1,0 +1,12 @@
+flask
+python-dotenv
+scikit-learn
+pandas
+numpy
+requests
+lightgbm
+seaborn
+plotly
+nltk
+wordcloud
+matplotlib

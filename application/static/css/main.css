@@ -1,0 +1,111 @@
+/***************** layout Section *****************/
+.layout-section {
+    position: relative;
+    background: url(../img/backgrounds/layout-bg-main.svg) center no-repeat;
+    background-size: cover;
+  
+    min-height: 100vh;
+  
+    padding: 100px 0;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .layout-section::after {
+    content: '';
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  
+    max-width: 490px;
+  
+    background: url(../img/backgrounds/layout-bg-1.png) top left no-repeat;
+    background-size: contain;
+  
+    z-index: 0;
+  }
+  .layout-section::before {
+    content: '';
+  
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+  
+    max-width: 490px;
+  
+    background: url(../img/backgrounds/layout-bg-2.png) bottom right no-repeat;
+    background-size: contain;
+  
+    z-index: 0;
+  }
+  .layout-section > * {
+    position: relative;
+    z-index: 1;
+  }
+  .layout-section .step-title {
+    font-size: 18px;
+    font-weight: 500;
+  
+    display: inline-flex;
+    align-items: start;
+    justify-content: center;
+  }
+  
+  @media (max-width: 996px) {
+    .layout-section::after {
+      display: none;
+    }
+    .layout-section::before {
+      max-height: 180px;
+    }
+  }
+  
+  .layout-section .file-select-card {
+    width: 100%;
+    background-color: rgba(65, 107, 239, 0.06);
+  }
+  
+  .layout-img-preview {
+    text-align: center;
+  
+    width: 226px;
+  }
+  .layout-img-preview img {
+    background: rgba(232, 233, 242, 0.4);
+    border: 0.5px solid rgba(66, 66, 66, 0.09);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
+  
+    object-fit: cover;
+  }
+  .layout-img-preview {
+    font-weight: 600;
+    font-size: 10px;
+  
+    color: rgba(0, 0, 0, 0.542);
+  }
+  
+  /* Preview Table */
+  .layout-section .preview-table {
+    white-space: nowrap;
+  }
+  .layout-section .preview-table td:not(:last-child) {
+    border-right: 0.5px solid rgba(0, 0, 0, 0.1);
+  }
+  .layout-section .preview-table td {
+    width: 50%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @media (max-width: 560px) {R
+    .layout-section .preview-table td {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
