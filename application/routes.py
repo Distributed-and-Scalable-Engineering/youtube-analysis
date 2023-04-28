@@ -22,7 +22,16 @@ def getImageResult():
 
     res = None
 
-    if(place != None):
+    if(place != None and category != None):
+        print(f'request got in here for category and place...', category, place)
+        if(place == 'NEWYORK' and category.lower() == 'food'):
+            res = 'newyork'
+        elif(place == 'TEXAS' and category.lower() == 'food'):
+            res = 'texas'
+        elif(place == 'CHICAGO' and category.lower() == 'food'):
+            res = 'chicago'
+
+    if(place != None and category == None or category == ''):
         print(f'request got in here for place ...', place)
         if(place == 'NEWYORK'):
             res = 'NEWYORK'
@@ -31,14 +40,7 @@ def getImageResult():
         elif(place == 'TEXAS'):
             res = 'TEXAS'
     
-    if(category != None):
-        print(f'request got in here for category ...', category)
-        if(category.lower() == 'Newyork'.lower()):
-            res = 'newyork'
-        elif(category.lower() == 'Texas'.lower()):
-            res = 'texas'
-        elif(category.lower() == 'Chicago'.lower()):
-            res = 'chicago'
+   
 
     if(res == None):
         res = 'NORESULT'

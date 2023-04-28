@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                          <label data-toggle="tooltip" data-placement="top" title="Masonry veneer area category">Places</label>
+                          <label data-toggle="tooltip" data-placement="top" title="Select a place or city">Places</label>
                           <select class="form-control" name="place" id="place">
                             <option value="" selected>- Select Place -</option>
                             <option value="NEWYORK">NEWYORK</option>
@@ -30,8 +30,8 @@
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label data-toggle="tooltip" data-placement="top" title="Enter food name" for="">Category</label>
-                            <input type="text" class="form-control" name="category" id="category" placeholder="Enter food name" value="{{Rice}}"/>
+                            <label data-toggle="tooltip" data-placement="top" title="Enter category e.g food" for="">Category</label>
+                            <input type="text" class="form-control" name="category" id="category" placeholder="Enter category e.g food" value=""/>
                         </div>
                     </div>
 
@@ -42,7 +42,7 @@
             <div class="col-md-8">
                 {% if (result) %}
                     {% if result == 'NEWYORK' %}
-                    <span class="pl-2">Showing result for: <b>Newyork</b></span>
+                    <span class="pl-2">Showing result for: <b>Popular cities in Newyork</b></span>
                     <div class="text-center">
                         <img
                         alt="Dashboard"
@@ -53,7 +53,7 @@
                         />
                     </div>
                     {% elif result == 'CHICAGO' %}
-                    <span class="pl-2">Showing result for: <b>Chicago</b></span>
+                    <span class="pl-2">Showing result for: <b>Popular cities in Chicago</b></span>
                     <div class="text-center">
                         <img
                         alt="Dashboard"
@@ -64,7 +64,7 @@
                         />
                     </div>
                     {% elif result == 'TEXAS' %}
-                    <span class="pl-2">Showing result for: <b>Texas</b></span>
+                    <span class="pl-2">Showing result for: <b>Popular cities in Texas</b></span>
                     <div class="text-center">
                         <img
                         alt="Dashboard"
@@ -77,7 +77,7 @@
 
                     <!-- category -->
                     {% elif result == 'newyork' %}
-                    <span class="pl-2">Showing food result for: <b>Newyork</b></span>
+                    <span class="pl-2 mt-2">Showing food result for: <b>Newyork Popular Foods</b></span>
                     <div class="text-center">
                         <img
                         alt="Dashboard"
@@ -87,8 +87,18 @@
                         width="100%"
                         />
                     </div>
+                    <span class="pl-2">Showing food result for: <b>Newyork Top Food related videos</b></span>
+                    <div class="text-center">
+                        <img
+                        alt="Dashboard"
+                        class="mb-5"
+                        height="100%"
+                        src="{{url_for('static', filename='/results/newyork/Top_Food_related_videos.PNG')}}"
+                        width="100%"
+                        />
+                    </div>
                     {% elif result == 'chicago' %}
-                    <span class="pl-2">Showing food result for: <b>Chicago</b></span>
+                    <span class="pl-2 mt-2">Showing food result for: <b>Chicago</b></span>
                     <div class="text-center">
                         <img
                         alt="Dashboard"
@@ -98,14 +108,34 @@
                         width="100%"
                         />
                     </div>
+                    <span class="pl-2">Showing food result for: <b>Chicago Top Food related videos</b></span>
+                    <div class="text-center">
+                        <img
+                        alt="Dashboard"
+                        class="mb-5"
+                        height="100%"
+                        src="{{url_for('static', filename='/results/chicago/Top_Food_related_videos.PNG')}}"
+                        width="100%"
+                        />
+                    </div>
                     {% elif result == 'texas' %}
-                    <span class="pl-2">Showing food result for: <b>Texas</b></span>
+                    <span class="pl-2 mt-2">Showing food result for: <b>Texas</b></span>
                     <div class="text-center">
                         <img
                         alt="Dashboard"
                         class="mb-5"
                         height="100%"
                         src="{{url_for('static', filename='/results/texas/food_word_cloud.PNG')}}"
+                        width="100%"
+                        />
+                    </div>
+                    <span class="pl-2">Showing food result for: <b>Texas Top Food related videos</b></span>
+                    <div class="text-center">
+                        <img
+                        alt="Dashboard"
+                        class="mb-5"
+                        height="100%"
+                        src="{{url_for('static', filename='/results/texas/Top_Food_related_videos.PNG')}}"
                         width="100%"
                         />
                     </div>
